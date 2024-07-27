@@ -37,6 +37,7 @@ class UsersController {
 
   //[POST] //login
   login = async (req, res, next) => {
+    console.log(">>>>>>>>>>>> login");
     try {
       if (!req.body.valueLogin || !req.body.password) {
         return res.status(200).json({

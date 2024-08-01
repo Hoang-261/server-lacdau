@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
@@ -12,13 +13,10 @@ const app = express();
 
 const port = process.env.PORT || 8080;
 
-// let react_url = "http://localhost:3000";
-let react_url = "https://lacdau.vercel.app";
-
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", react_url);
+  res.setHeader("Access-Control-Allow-Origin", REACT_URL);
 
   // Request methods you wish to allow
   res.setHeader(
